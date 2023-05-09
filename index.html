@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> 
+        
+   #start,#signeJ1,#signeJ2, #pict1,#equal,#player{
+text-align: center;
+  }
+
+ 
+  h1, h2  {
+    position: relative;
+    z-index: 1;
+    color: #d7d0d0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  button:hover{
+    background-color: green; /* curseur passe*/
+}
+button:active{
+    background-color: blue;/*curseur passe et active*/
+}
+  button{
+    
+    text-align: center;
+    background-color: #1c09acc5;
+    color: white;
+    border: none;
+    height: 36px;
+    width:  150px;
+    border-radius: 22px;
+    cursor: pointer;
+    margin-right: 8px;/* espacement a droite du button*/
+    transition: background-color 1s,
+    color 1s;
+    /* le transition est plutot dynamique de 1s*/
+    /*aligner avec le haut*/
+ 
+    
+}
+/*dimension image*/
+img {
+width : 252px;
+height : 168px;
+border: 5px solid #1c09acc5;
+}
+/*form*/
+
+/*le menu*/
+#header_nav{
+    background: indianred;
+    margin:20px;
+    text-align: center;
+}
+
+.validate{
+  margin-left: 750px;
+
+}
+#header_nav a:hover{
+    text-decoration: underline;
+}
+/* le milieu*/
+main{
+    background: rgb(237, 65, 65);
+    padding: 20px;
+    font-size: 16px;
+}
+.contenu{
+	background: #f6eadd;
+  background: linear-gradient( #f6eadd, #f9dac3);
+	width: 1000px; 
+	height: 600px;
+	margin: 0 auto;
+}
+#foot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Hauteur du pied-de-page */
+  text-align: center;
+  font-size: 20px;
+}
+h1{
+		padding: 1em;
+		width: 10%;
+		background:  rgb(237, 65, 65);
+		position: relative;
+		animation: mymove 9s;
+		text-align: center;
+	}
+	@keyframes mymove {
+		from {left: 0px;}
+		to {left: 85%;}
+	}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--<link rel="stylesheet" type="text/css" href="style.css">--> 
+ 
+    <title>Chifoumi</title>
+</head>
+<script>
+  
+</script>
+<body>
+  
+  <div class="contenu">
+    <header>
+      <h1>Chifoumi</h1>
+    
+    </header>
+    <main>
+
+      <div id="start">
+        <h2>   Bienvenue</h2>
+          <h2>
+              Voulez-vous jouer?
+          </h2>
+        
+              <button onclick="play()">Oui</button>
+              <button onclick="quit()">Non</button>
+      </div>
+
+      <div id="end">
+          <h2> Au revoir</h2>
+          <button class="validate" onclick="twFermer() "> Quiter</button> 
+      </div>
+
+      <div id="player">
+       
+         <h2>
+            Voulez-vous jouer contre un joueur ou un ordinateur?
+          </h2>
+          <button onclick="player_choice()">Joueur</button>
+          <button onclick="player_choice1()">Ordinateur</button>
+      </div>
+
+      <div>
+         <!--Joueur 1-->
+        <div id="signeJ1">
+       
+            <h2>c'est votre tour </h2>
+            <h2>Choisissez votre arme</h2>
+
+            <button onclick="rock()">Pierre</button> 
+            <button onclick="paper()">Feuille</button>  
+            <button onclick="scissors()">Ciseaux</button>
+            <button id="valid" class="validate" onclick="player2()"> Valider le choix</button>
+            <button id="validComp" class="validate" onclick="ordi()"> Valider votre choix</button>
+        </div>  
+
+   <!--Joueur 2-->
+        <div id="signeJ2">
+        
+            <h2>C'est le tour de l'autre joueur de choisir </h2>
+             <h2 id="res">Choisissez votre arme</h2>
+ 
+             <button onclick="rock()">Pierre</button> 
+             <button onclick="paper()">Feuille</button>  
+             <button onclick="scissors()">Ciseaux</button>
+             <button class="validate" onclick="result()"> Valider</button> 
+
+        </div>
+         <!--ordinateur-->
+
+        <div id="computer">
+        
+          <h2>L'ordi a choisi </h2>
+          <button class="validate" onclick="result()"> Valider</button> 
+      </div>
+
+        <div id="pict1">
+            <img id="image0" src="photos/chifoumi.jpg" />
+        </div>
+      </div>
+  
+    <div id="win">
+      <h2> Vous avez GAGNER!!!!! </h2>
+      <button class="validate" onclick='window.location.reload(false)'> Retour</button> 
+    </div>
+
+    <div id="lost">
+       <h2> Vous avez perdu ....</h2>
+       <button class="validate" onclick='window.location.reload(false)'> Retour</button> 
+    </div>
+    <div id="equal">
+   
+        <h2> Egalite</h2>
+        <button class="validate" onclick='window.location.reload(false)'> Retour</button> 
+       
+    </div>
+</div>
+
+</main>
+
+
+<footer id="foot">
+    <p>Merci de votre visite</p>
+    <p>Ce jeu vous est proposé par Lova, Quentin et Romain.</p>
+</footer>
+</body>
+<script src="action.js"></script>
+</html>
